@@ -1,37 +1,34 @@
 import 'package:flutter/material.dart';
 import 'description_place.dart';
 import 'review_list.dart';
+import 'gradient_back.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   String descriptionDummy = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis ante at erat pulvinar fringilla. Donec molestie imperdiet sollicitudin. Sed lacinia, odio quis cursus laoreet, mi mi porttitor orci, hendrerit tempor nisl metus vitae tortor. Donec consectetur at libero ut tempus. Nam tincidunt dapibus arcu, eget viverra ipsum egestas quis. Mauris aliquet, ligula non ullamcorper vulputate, ante libero luctus eros, non porta erat tortor quis turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque faucibus ullamcorper eros, quis varius elit ultrices non.";
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.lightGreen,
       ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text("Hola Mundo Feli"),
-          ),
-          body:
-            //new DescriptionPlace("Bahamas", 4, descriptionDummy),
-            ReviewList(),
-          ),
-        );
+      home: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            ListView(
+              children: <Widget>[
+                DescriptionPlace("Bahamas", 4, descriptionDummy),
+                ReviewList()
+              ],
+            ),
+            GradientBack()
+          ],
+        ),
+      ),
+    );
   }
 }
 
