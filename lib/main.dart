@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'description_place.dart';
-
+import 'review_list.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -21,13 +21,15 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightGreen,
       ),
         home: Scaffold(
           appBar: AppBar(
             title: Text("Hola Mundo Feli"),
           ),
-          body: new DescriptionPlace("Bahamas", 4, descriptionDummy),
+          body:
+            //new DescriptionPlace("Bahamas", 4, descriptionDummy),
+            ReviewList(),
           ),
         );
   }
