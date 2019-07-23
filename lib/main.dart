@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:platzitrips/User/bloc/bloc_user.dart';
 import 'package:platzitrips/platzi_trips_cupertino.dart';
 import 'platzi_trips.dart';
-
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,13 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
+    return BlocProvider(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        home: PlatziTripsCupertino(),
       ),
-      home:PlatziTripsCupertino(),
-    );
+    bloc: UserBloc());
   }
 }
 

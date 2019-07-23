@@ -97,11 +97,8 @@ class DescriptionPlace extends StatelessWidget {
             star_half
           ],
         )
-
-
       ],
     );
-
 
     return Column(
       crossAxisAlignment:CrossAxisAlignment.start,
