@@ -56,14 +56,11 @@ class _SignInScreen extends State<SignInScreen> {
                     fontFamily: "Lato",
                     color: Colors.white,
                     fontWeight: FontWeight.bold
-
-
                 ),
               ),
               ButtonGreen(text: "Login with Gmail",
                 onPressed: () {
                   userBloc.signIn().then((FirebaseUser user) => print("El usuario es ${user.displayName}"));
-
                 },
                 width: 300.0,
                 height: 50.0,
@@ -75,6 +72,4 @@ class _SignInScreen extends State<SignInScreen> {
       ),
     );
   }
-
-
 }
