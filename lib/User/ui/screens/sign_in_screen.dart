@@ -19,10 +19,12 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreen extends State<SignInScreen> {
 
   UserBloc userBloc;
+  double screenWidht;
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    screenWidht = MediaQuery.of(context).size.width;
     userBloc = BlocProvider.of(context);
     return _handleCurrentSession();
   }
@@ -51,24 +53,34 @@ class _SignInScreen extends State<SignInScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("Welcome \n This is your Travel App",
-                style: TextStyle(
-                    fontSize: 37.0,
-                    fontFamily: "Lato",
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold
+              Flexible(
+                child: Container(
+                  width: screenWidht,
+                  child: Text("Welcome \n This is your Travel App",
+                    style: TextStyle(
+                        fontSize: 37.0,
+                        fontFamily: "Lato",
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+
+
+                    ),
+                  ),
                 ),
               ),
+
               ButtonGreen(text: "Login with Gmail",
                 onPressed: () {
-                  userBloc.signIn().then((FirebaseUser user)  {
+                  userBloc.signOut();
+                  userBloc.signIn().then((FirebaseUser user) {
                     userBloc.updateUserData(User(
-                      uid: user.uid,
-                      name: user.displayName,
-                      email: user.email,
-                      photoURL: user.photoUrl
-                  ));
+                        uid: user.uid,
+                        name: user.displayName,
+                        email: user.email,
+                        photoURL: user.photoUrl
+                    ));
                   });
+
                 },
                 width: 300.0,
                 height: 50.0,
@@ -80,4 +92,6 @@ class _SignInScreen extends State<SignInScreen> {
       ),
     );
   }
+
+
 }
