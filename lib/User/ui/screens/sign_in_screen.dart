@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzitrips/User/model/user.dart';
 import 'package:platzitrips/widgets/gradient_back.dart';
 import 'package:platzitrips/widgets/button_green.dart';
 import 'package:platzitrips/User/bloc/bloc_user.dart';
@@ -46,7 +47,7 @@ class _SignInScreen extends State<SignInScreen> {
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          GradientBack("", null),
+          GradientBack(height: null),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -60,7 +61,14 @@ class _SignInScreen extends State<SignInScreen> {
               ),
               ButtonGreen(text: "Login with Gmail",
                 onPressed: () {
-                  userBloc.signIn().then((FirebaseUser user) => print("El usuario es ${user.displayName}"));
+                  userBloc.signIn().then((FirebaseUser user)  {
+                    userBloc.updateUserData(User(
+                      uid: user.uid,
+                      name: user.displayName,
+                      email: user.email,
+                      photoURL: user.photoUrl
+                  ));
+                  });
                 },
                 width: 300.0,
                 height: 50.0,
