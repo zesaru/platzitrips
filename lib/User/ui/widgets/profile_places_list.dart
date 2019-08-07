@@ -16,7 +16,7 @@ class ProfilePlacesList extends StatelessWidget {
       name: "Mountains",
       description: "Hiking. Water fall hunting. Natural bath’, 'Scenery & Photography",
       urlImage: "https://images.unsplash.com/photo-1524654458049-e36be0721fa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-      likes: 10
+      likes: 10, userOwner: null
 
   );
 

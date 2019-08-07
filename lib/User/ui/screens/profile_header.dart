@@ -80,7 +80,6 @@ class ProfileHeader extends StatelessWidget {
           ],
         ),
       );
-
     }
   }
 
