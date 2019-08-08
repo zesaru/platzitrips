@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:platzitrips/Place/ui/widgets/title_input_location.dart';
 import 'package:platzitrips/widgets/gradient_back.dart';
 import 'package:platzitrips/widgets/title_header.dart';
 import 'package:platzitrips/widgets/text_input.dart';
@@ -75,12 +76,12 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                   maxLines: 4,
                   controller: _controllerDescriptionPlace,
                 ),
-//                Container(
-//                  margin: EdgeInsets.only(top: 20.0),
-//                  child: TextInputLocation(
-//                    hintText: "Add Location",
-//                    iconData: Icons.location_on,),
-//                )
+                Container(
+                  margin: EdgeInsets.only(top: 20.0),
+                  child: TextInputLocation(
+                    hintText: "Add Location",
+                    iconData: Icons.location_on,),
+                )
               ],
             ),
 
