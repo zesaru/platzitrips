@@ -105,7 +105,7 @@ class DescriptionPlace extends StatelessWidget {
       children: <Widget>[
         title_stars,
         description,
-        ButtonPurple("Navigate")
+        ButtonPurple(buttonText: "Navigate", onPressed: () {},)
       ],
     );
 
